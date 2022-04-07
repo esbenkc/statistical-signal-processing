@@ -1,0 +1,353 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{Homework 1}
+\author{Esben Kran}
+\date{4/6/2022}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Homework 1},
+  pdfauthor={Esben Kran},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+\hypertarget{statistical-signal-processing}{%
+\section{Statistical signal
+processing}\label{statistical-signal-processing}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(tidyverse, ggplot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installing package into 'C:/Users/esben/Documents/R/win-library/4.0'
+## (as 'lib' is unspecified)
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggplot' is not available (for R version 4.0.2)
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.0:
+##   cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.0/PACKAGES'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in p_install(package, character.only = TRUE, ...):
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called 'ggplot'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in pacman::p_load(tidyverse, ggplot): Failed to install/load:
+## ggplot
+\end{verbatim}
+
+\hypertarget{section}{%
+\subsection{2.2.1}\label{section}}
+
+{[}NA{]}
+
+\hypertarget{section-1}{%
+\subsection{1.1.1}\label{section-1}}
+
+In a radar system an estimator of round trip delay \(\tau_0\) has the
+PDF \(\hat \tau_0 \sim N(\tau_0,\sigma_{\hat\tau_0}^2)\), where
+\(\tau_0\) is the true value. If the range is to be estimated, propose
+an estimator \(R\) and find its PDF. Next determine the standard
+deviation \(\sigma_{\hat\tau_0}\) so that 99\% of the time the range
+estimate will be within 100 m of the true value. Use
+\(c=3\cdot 10^8 m/s\) for the speed of electromagnetic propagation.
+
+The estimator for R is
+\[R~\dfrac{c\cdot N(\tau_0, \sigma^2_{\hat \tau_0})}{2}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c }\OtherTok{\textless{}{-}} \DecValTok{3} \SpecialCharTok{*} \DecValTok{10}\SpecialCharTok{\^{}}\DecValTok{8}
+\NormalTok{range\_lim }\OtherTok{=} \DecValTok{100}
+\NormalTok{sigma }\OtherTok{=} \DecValTok{30}
+\NormalTok{tau }\OtherTok{=} \DecValTok{200}
+
+\CommentTok{\# Defining range estimator:}
+\NormalTok{R }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) (c}\SpecialCharTok{*}\FunctionTok{dnorm}\NormalTok{(x, tau, sigma)) }\SpecialCharTok{/} \DecValTok{2}
+\FunctionTok{plot}\NormalTok{(R, }\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{400}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{h1_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Not sure about determining SD for 99\% range estimate \textbackslash{}in [{-}100, 100]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{section-2}{%
+\subsection{1.1.4}\label{section-2}}
+
+It is desired to estimate the value of a DC level A in WGN or
+\[x[n]=A+w[n]$ where $n=0,1,...,N-1\] Where \(w[n]\) is zero mean and
+uncorrelated, and each sample has variance \(\sigma^2=1\). Consider the
+two estimators: \[\hat A = \dfrac{1}{N}\sum^{N-1}_{n=0}{x[n]}\]
+\[\overline A=\dfrac{1}{N+2}\left(2x[0]+\sum^{N-1}_{n=1}{x[n]+2x[N-1]}\right)\]
+Which one is better? Does it depend on the value of A?
+
+Run M experiments to see difference between the two estimators and
+analyse error. Based on what we can see here, \textbf{the estimator
+\(A_1\) is always better than estimator \(A_2\)}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test\_range }\OtherTok{=} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{, }\FloatTok{0.1}\NormalTok{)}
+\NormalTok{samples }\OtherTok{=} \DecValTok{100}
+\NormalTok{M }\OtherTok{=} \DecValTok{1000}
+
+\NormalTok{a1 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{mean}\NormalTok{(x)}
+\NormalTok{a2 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) (}\DecValTok{1}\SpecialCharTok{/}\NormalTok{(}\FunctionTok{length}\NormalTok{(x)}\SpecialCharTok{+}\DecValTok{2}\NormalTok{))}\SpecialCharTok{*}\NormalTok{(}\DecValTok{2}\SpecialCharTok{*}\NormalTok{x[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\FunctionTok{sum}\NormalTok{(x)}\SpecialCharTok{+}\DecValTok{2}\SpecialCharTok{*}\NormalTok{x[}\FunctionTok{length}\NormalTok{(x)}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{])}
+
+\FunctionTok{data.frame}\NormalTok{(}
+    \AttributeTok{m =} \FunctionTok{lapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{M, }\ControlFlowTok{function}\NormalTok{(m) }\FunctionTok{rep}\NormalTok{(m, }\FunctionTok{length}\NormalTok{(test\_range) }\SpecialCharTok{*}\NormalTok{ samples)) }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ unlist,}
+    \AttributeTok{mu =} \FunctionTok{lapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{M, }\ControlFlowTok{function}\NormalTok{(m) }\FunctionTok{lapply}\NormalTok{(test\_range, }\ControlFlowTok{function}\NormalTok{(i) }\FunctionTok{rep}\NormalTok{(i, samples)) }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ unlist) }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ unlist,}
+    \AttributeTok{x =} \FunctionTok{lapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{M, }\ControlFlowTok{function}\NormalTok{(m) }\FunctionTok{lapply}\NormalTok{(test\_range, }\ControlFlowTok{function}\NormalTok{(i) }\FunctionTok{rnorm}\NormalTok{(samples, i, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ unlist) }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ unlist}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(mu, m) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{a1 =} \FunctionTok{abs}\NormalTok{(}\FunctionTok{a1}\NormalTok{(x)}\SpecialCharTok{{-}}\NormalTok{mu),}
+    \AttributeTok{a2 =} \FunctionTok{abs}\NormalTok{(}\FunctionTok{a2}\NormalTok{(x)}\SpecialCharTok{{-}}\NormalTok{mu)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(mu) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{a1 =} \FunctionTok{mean}\NormalTok{(a1),}
+    \AttributeTok{a2 =} \FunctionTok{mean}\NormalTok{(a2)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{unique}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}\FunctionTok{c}\NormalTok{(a1, a2)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{aes}\NormalTok{(mu, value, }\AttributeTok{color =}\NormalTok{ name) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{x =} \StringTok{"Tau"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Error"}\NormalTok{,}
+    \AttributeTok{color =} \StringTok{"Estimator"}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.2}\NormalTok{), }\AttributeTok{expand=}\NormalTok{F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'mu', 'm'. You can override using the `.groups` argument.
+\end{verbatim}
+
+\includegraphics{h1_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\hypertarget{section-3}{%
+\subsection{2.1.1}\label{section-3}}
+
+{[}NA{]}
+
+\hypertarget{section-4}{%
+\subsection{1.1.2}\label{section-4}}
+
+An unknown parameter \(O\) influences the outcome of an experiment which
+is modeled by the random variable x. The PDF of x is
+\[p(x;O)=\dfrac{1}{\sqrt{2\pi}}exp\left[-\dfrac{1}{2}(x-O)^2\right]\] A
+series of experiments is performed, and x is found to always be in the
+interval \([97,103]\). As a result, the investigator concludes that
+\(O\) must have been 100. Is this assertion correct?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{100}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{mean\_x }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(x)}
+\NormalTok{range\_x }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(x) }\SpecialCharTok{{-}} \FunctionTok{min}\NormalTok{(x)}
+
+\FunctionTok{paste}\NormalTok{(}
+  \StringTok{"**[1.1.2] Sampling a 1000 times with an A of"}\NormalTok{,}
+\NormalTok{  a,}
+  \StringTok{"gives a mean of"}\NormalTok{,}
+\NormalTok{  mean\_x,}
+  \StringTok{"with range"}\NormalTok{,}
+  \FunctionTok{min}\NormalTok{(x),}
+  \StringTok{"to"}\NormalTok{,}
+  \FunctionTok{max}\NormalTok{(x),}
+  \StringTok{"of"}\NormalTok{,}
+\NormalTok{  range\_x,}
+  \StringTok{"which indicates that the"}\NormalTok{,}
+  \StringTok{"investigator is correct.**"}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "**[1.1.2] Sampling a 1000 times with an A of 100 gives a mean of 99.9723798909143 with range 96.6226832176055 to 103.283011297738 of 6.66032808013273 which indicates that the investigator is correct.**"
+\end{verbatim}
+
+\hypertarget{section-5}{%
+\subsection{6}\label{section-5}}
+
+Suppose \(x\sim N(5,2)\) and \(y\sim 2x+4\). Find \(E(y)\), \(var(y)\),
+and the PDF \(p_y(y)\).
+
+Expected value (mean(y)):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{beta\_1 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)}
+  \FunctionTok{dnorm}\NormalTok{(x, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{f }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)}
+  \DecValTok{1}\SpecialCharTok{/}\FunctionTok{abs}\NormalTok{(}\DecValTok{2}\NormalTok{) }\SpecialCharTok{*} \FunctionTok{beta\_1}\NormalTok{((x}\DecValTok{{-}4}\NormalTok{)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+
+\FunctionTok{weighted.mean}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{1e2}\NormalTok{, }\FloatTok{1e2}\NormalTok{, }\FloatTok{1e{-}2}\NormalTok{), }\FunctionTok{f}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{1e2}\NormalTok{, }\FloatTok{1e2}\NormalTok{, }\FloatTok{1e{-}2}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14
+\end{verbatim}
+
+Variance from the sampled distribution:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{50}\NormalTok{, }\FloatTok{0.1}\NormalTok{)}
+\NormalTok{px }\OtherTok{\textless{}{-}} \FunctionTok{f}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{50}\NormalTok{, }\FloatTok{0.1}\NormalTok{))}
+\NormalTok{draws }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{5000}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{prob =}\NormalTok{ px)}
+
+\FunctionTok{var}\NormalTok{(draws)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15.6968
+\end{verbatim}
+
+The PDF of y with \(a\) multiplied into \(beta_1\):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(f, }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.2}\NormalTok{), }\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{30}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{h1_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{section-6}{%
+\subsection{7}\label{section-6}}
+
+Suppose that \(x\sim N(0,\sigma_x^2)\) and \(w\sim N(0,\sigma_w^2)\) and
+\(y=ax+w\). If w and x are independent, what is mean and covariance
+matrix for the Gaussian vector \(z=[x,y]^T\)? Hint: Note that \(E[z]\)
+should be a 2D column vector and \(var(z)\) should be a 2x2 matrix.
+
+\[z=[x,y]^T\] \[[E(x), E(\omega)]^T  = [0, 0]^T\]
+\[var(z)= \begin{bmatrix}\sigma_x^2&cov(x,y)\\cov(x,y)&var(y)\end{bmatrix}\]
+
+\end{document}
